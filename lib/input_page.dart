@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import 'reusable_card.dart';
+import 'constants.dart';
 import 'icon_content.dart';
-
-const bottomContainerHeight = 80.0;
-const bottomContainerColor = Color(0xFFEB1555);
-const activeCardColor = Color(0xFF1D1E33);
-const inactiveCardColor = Color(0xFF111328);
+import 'reusable_card.dart';
 
 enum Gender {
   male,
@@ -35,8 +31,8 @@ class _InputPageState extends State<InputPage> {
               children: [
                 ReusableCard(
                   color: selectedGender == Gender.male
-                      ? activeCardColor
-                      : inactiveCardColor,
+                      ? kActiveCardColor
+                      : kInactiveCardColor,
                   child: IconContent(
                     icon: FontAwesomeIcons.mars,
                     label: 'MALE',
@@ -45,8 +41,8 @@ class _InputPageState extends State<InputPage> {
                 ),
                 ReusableCard(
                   color: selectedGender == Gender.female
-                      ? activeCardColor
-                      : inactiveCardColor,
+                      ? kActiveCardColor
+                      : kInactiveCardColor,
                   child: IconContent(
                     icon: FontAwesomeIcons.venus,
                     label: 'FEMALE',
@@ -67,9 +63,9 @@ class _InputPageState extends State<InputPage> {
           ),
           Container(
             width: double.infinity,
-            height: bottomContainerHeight,
+            height: kBottomContainerHeight,
             margin: const EdgeInsets.only(top: 16),
-            color: bottomContainerColor,
+            color: kBottomContainerColor,
           ),
         ],
       ),
