@@ -18,7 +18,8 @@ class InputPage extends StatefulWidget {
 
 class _InputPageState extends State<InputPage> {
   Gender selectedGender;
-  int height = 180;
+  int height = 150;
+  int weight = 60;
 
   @override
   Widget build(BuildContext context) {
@@ -102,8 +103,47 @@ class _InputPageState extends State<InputPage> {
           Expanded(
             child: Row(
               children: [
-                ReusableCard(),
-                ReusableCard(),
+                ReusableCard(
+                  color: kActiveCardColor,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'WEIGHT',
+                        style: kLabelTextStyle,
+                      ),
+                      Text(
+                        '$weight',
+                        style: kNumberTextStyle,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          FloatingActionButton(
+                            backgroundColor: Color(0xFF4C4D5F),
+                            child: Icon(
+                              Icons.add_rounded,
+                              color: Colors.white,
+                            ),
+                            onPressed: () {},
+                          ),
+                          SizedBox(width: 16),
+                          FloatingActionButton(
+                            backgroundColor: Color(0xFF4C4D5F),
+                            child: Icon(
+                              Icons.add_rounded,
+                              color: Colors.white,
+                            ),
+                            onPressed: () {},
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+                ReusableCard(
+                  color: kActiveCardColor,
+                ),
               ],
             ),
           ),
