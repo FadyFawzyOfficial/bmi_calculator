@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import 'bottom_button.dart';
-import 'constants.dart';
-import 'icon_content.dart';
+import '../constants.dart';
+import '../widgets/bottom_button.dart';
+import '../widgets/icon_content.dart';
+import '../widgets/reusable_card.dart';
+import '../widgets/round_icon_button.dart';
 import 'results_page.dart';
-import 'reusable_card.dart';
 
 enum Gender {
   male,
@@ -187,30 +188,6 @@ class _InputPageState extends State<InputPage> {
           ),
         ],
       ),
-    );
-  }
-}
-
-class RoundIconButton extends StatelessWidget {
-  final IconData icon;
-  final Function onPressed;
-
-  const RoundIconButton({
-    @required this.icon,
-    @required this.onPressed,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return RawMaterialButton(
-      fillColor: Color(0xFF4C4F5E),
-      shape: CircleBorder(),
-      child: Icon(icon),
-      constraints: BoxConstraints.tightFor(
-        width: 56.0,
-        height: 56.0,
-      ),
-      onPressed: onPressed,
     );
   }
 }
