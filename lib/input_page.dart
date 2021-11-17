@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import 'bottom_button.dart';
 import 'constants.dart';
 import 'icon_content.dart';
 import 'results_page.dart';
@@ -177,20 +178,9 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          GestureDetector(
-            child: Container(
-              width: double.infinity,
-              height: kBottomContainerHeight,
-              padding: const EdgeInsets.only(bottom: 8),
-              margin: const EdgeInsets.only(top: 16),
-              color: kAccentColor,
-              alignment: Alignment.center,
-              child: Text(
-                'CALCULATE',
-                style: kLargeButtonTextStyle,
-              ),
-            ),
-            onTap: () => Navigator.push(
+          BottomButton(
+            lable: 'CALCULATE',
+            onPressed: () => Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => ResultsPage()),
             ),
